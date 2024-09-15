@@ -24,6 +24,7 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.value.email == 'abhishek@gmail.com' && this.loginForm.value.password == 'qwerty') {
+      localStorage.setItem('userToken', 'loggedin');
       this.router.navigate(['/home']);
     } else {
       this.snackBar.open('Invalid credentials!', 'Close', {
